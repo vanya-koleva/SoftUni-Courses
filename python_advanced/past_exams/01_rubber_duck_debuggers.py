@@ -1,4 +1,4 @@
-from collections import deque, Counter
+from collections import deque
 
 time_per_task = deque(int(x) for x in input().split())
 number_of_tasks = [int(x) for x in input().split()]
