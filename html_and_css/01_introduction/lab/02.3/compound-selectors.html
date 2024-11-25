@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="compound-selectors.css">
+        <title>Document</title>
+    </head>
+    <body>
+        
+        <div id="unique-section">
+            <p class="highlighted">This is a paragraph inside a div.</p>
+
+            <p>This paragraph follows another paragraph.<span>Span inside a paragraph.</span></p>
+
+            <span>This span is a sibling of paragraphs.</span>
+            <a href="#">This is a link</a>
+        </div>
+
+        <div>
+            <ul>
+                <li>List item 1</li>
+                <li>List item 2</li>
+                <ul>
+                    <li>Nested list item 1</li>
+                    <li>Nested list item 2</li>
+                </ul>
+                <li>List item 3</li>
+            </ul>
+        </div>
+
+        <div>
+            <input type="text" class="styled-input" placeholder="Type something">
+            <input type="text" class="other-input" placeholder="Type something">
+        </div>
+
+        <div class="box emphasized">
+            <p>This box has two classes applied.</p>
+        </div>
+
+        <div>
+            <p class="highlighted-text special" id="specific-para">This is a paragraph to demonstrate specificity.</p>
+        </div>
+
+    </body>
+</html>

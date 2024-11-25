@@ -1,0 +1,22 @@
+h1 {
+    color: purple;
+}
+p {
+    font-size: 14;
+}
+.highlight {
+    background-color: antiquewhite;
+}
+#special-paragraph {
+    font-style: italic;
+}
+div {
+    background-color: black;
+    color: white;
+}
+ul {
+    list-style-type: square;
+}
+li {
+    color: pink;
+}

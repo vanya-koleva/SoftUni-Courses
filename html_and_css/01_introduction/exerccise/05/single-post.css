@@ -1,0 +1,7 @@
+.post-comments {
+    background: black;
+    color: white;
+}
+.post-comments article:nth-of-type(2) {
+    color: red;
+}

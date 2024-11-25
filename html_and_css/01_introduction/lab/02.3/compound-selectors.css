@@ -1,0 +1,19 @@
+p.highlighted {
+    color: aqua;
+    font-size: 18px;
+}
+div#unique-section {
+    background-color: bisque;
+    padding: 5em;
+}
+input[type=text].styled-input {
+    border: 2px solid pink;
+    padding: 2em;
+}
+.box.emphasized {
+    font-style: italic;
+    font-weight: 900;
+}
+div p.special.highlighted-text {
+    color: aquamarine;
+}
