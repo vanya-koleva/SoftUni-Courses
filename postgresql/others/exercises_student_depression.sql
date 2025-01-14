@@ -41,7 +41,7 @@ CREATE TABLE st_depression (
 	work_study_hours NUMERIC(3, 1),
 	financial_stress NUMERIC(4, 2),
 	family_history_of_mental_illness type_yes_no,
-	Depression BOOL
+	depression BOOL
 );
 
 /*
@@ -97,4 +97,41 @@ SELECT age, study_satisfaction, depression
 FROM st_depression
 WHERE age BETWEEN 20.0 AND 30.0 AND depression = true
 ORDER BY study_satisfaction DESC
+;
+
+SELECT
+	CONCAT(
+		gender,
+		', ',
+		age
+	) AS student,
+	CONCAT_WS(
+		', ',
+		city,
+		degree, 
+		profession
+	) AS information,
+	depression,
+	ever_had_suicidal_thoughts AS "suicidal thoughts"
+FROM
+	st_depression AS d
+WHERE
+	ever_had_suicidal_thoughts = 'Yes' 
+		AND 
+	city ILIKE '%Jai%'
+LIMIT 10
+;
+
+ALTER TABLE 
+	st_depression
+RENAME TO 
+	students
+;
+
+ALTER TABLE 
+	students
+RENAME COLUMN 
+	ever_had_suicidal_thoughts 
+TO 
+	suicidal_thoughts
 ;
