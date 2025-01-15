@@ -135,3 +135,33 @@ RENAME COLUMN
 TO 
 	suicidal_thoughts
 ;
+
+SELECT DISTINCT 	--All columns are used to determine uniqueness. Completely unique rows
+	city,
+	academic_pressure
+FROM
+	students
+ORDER BY
+	city
+LIMIT 10
+;
+
+SELECT DISTINCT ON (city) 	--Applies only to specified column(s). Unique rows based on certain columns
+	city,
+	academic_pressure
+FROM
+	students
+ORDER BY
+	city
+LIMIT 10
+;
+
+SELECT DISTINCT ON (city, academic_pressure)
+	city,
+	academic_pressure
+FROM
+	students
+ORDER BY
+	city
+LIMIT 10
+;
