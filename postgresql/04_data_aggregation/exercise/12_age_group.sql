@@ -18,7 +18,7 @@ ORDER BY
 ;
 
 /*
-It goes thourh the raws and checks the age.
+It goes thourh the rows and checks the age.
 If the age is in the given interval, 
 it returns the corresponding string.
 Then it goes through the strings and groups them.
