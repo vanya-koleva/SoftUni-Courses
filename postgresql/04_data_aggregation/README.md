@@ -7,8 +7,8 @@
 
 -   Treating same records as one. It seems like it is only one row, but the other same rows are not eliminated, just compressed. Unlike DISTINCT, which eliminates duplicate rows entirely, GROUP BY allows you to perform operations on the grouped data.
 -   GROUP BY can be used with aggregate functions (unlike DISTINCT).
-    > [!IMPORTANT]  
-    > It is mandatory to group by all the columns we have selected (except for the aggregate functions).
+> [!IMPORTANT]  
+> It is mandatory to group by all the columns we have selected (except for the aggregate functions).
 
 ## Aggregate Functions
 
