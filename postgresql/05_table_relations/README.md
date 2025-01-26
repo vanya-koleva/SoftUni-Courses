@@ -5,9 +5,13 @@
 1. **Identification of the entities**.
 
 -   The term "entity" refers to a real-world object or concept that is represented in the database. For example, in a library system, entities might include _books, authors_, and _borrowers_. Each of these entities is represented by a table in the database.
+
 -   Each table represents an object that is important to the busines.
+
 -   Identify the main entities in the system based on the requirements. Most often they are nouns in the specification. We should start building a dictionary by initiating conversations with experts in the field.
+
 -   Create a table for each entity to store its relevant data.
+
 -   Ensure that the table corresponds directly to the object it represents, making the design intuitive and aligned with the real-world structure
 
 2. **Defining table columns.**
@@ -15,19 +19,24 @@
 -   The attributes of the entities.
 -   It is a good practice to include additional columns, such as a column that stores the creation date of a record, who created it, etc.
 
-1. **Defining primary keys (PK).**
+3. **Defining primary keys (PK).**
 
 -   Always define an additional column for the primary key.
+
     -   Don't use an existing column.
     -   Do not use business terms as a Primary Key because, no matter how much the business assures us that something is unique and will always remain so, it should not be trusted.
     -   Must be declared as a PRIMARY KEY.
     -   Put the primary key in the first column. - Exceptions:
         -   Entities that have well-known ID, e.g., countries (BG, DE, US) and currencies (USD, EUR, BGN).
+
 -   IDs are either INT or STRING.
+
 -   It is more secure to use strings because they are harder to crack with brute force.
+
 -   Integers are efficient for indexing and querying.
--   If something is a PK, it is inherently unique.
--   When we designate a column as the Primary Key, PostgreSQL automatically enforces a UNIQUE and NOT NULL constraints and creates a B-tree index on that column.
+
+-   When we designate a column as the Primary Key, PostgreSQL automatically enforces UNIQUE and NOT NULL constraints and creates a B-tree index on that column.
+
 -   When we use the GENERATED AS IDENTITY constraint, the system creates a SEQUENCE object. This object lets us define options for system-generated values. We can specify these options using the following syntax:
 
 ```sql
@@ -75,6 +84,7 @@ fk_<name_of_current_table>_<name_of_referenced_table>
 ```
 
 -   **Many-to-One**: A relationship where multiple records in one table are associated with a single record in another table. With this relation, we always write the reference in the child table (the "many" part of many-to-one).
+
 -   **Many-to-Many**: Achieved using a junction/mapping table.  
     Implementation:
 
@@ -113,10 +123,10 @@ CONSTRAINT pk_<table_name>   --optional
 PRIMARY KEY (col_1, col_2)
 ```
 
--   **One-to-One**: A relationship where a record in one table is linked to exactly one record in another table. Used rarely, for example when we want to move information that we rarey use to anoter table. It is implemented by adding a UNIQUE constraint to the referenced column.
+-   **One-to-One**: A relationship where a record in one table is linked to exactly one record in another table. Used rarely, for example when we want to move information that we rarey use to anoter table. It is implemented by adding a UNIQUE constraint to the referenced column (FK).
 
-1. **Defining constraints.**
-2. **Filling test data.**
+5. **Defining constraints.**
+6. **Filling test data.**
 
 ## Table Design Principles
 
