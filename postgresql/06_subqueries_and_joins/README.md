@@ -145,3 +145,37 @@ FROM
 | **RANK()**       | Yes             | Yes                      | No                     |
 | **DENSE_RANK()** | No              | Yes                      | No                     |
 
+## COALESCE
+
+-   Returns the first non-null value from a list of expressions. Once a non-null value is found, the function stops evaluating the remaining expressions
+
+-   Syntax:
+
+```sql
+COALESCE(value1, value2, ..., value_n)
+```
+
+## WITH
+
+-   Used to create Common Table Expressions (CTEs), which are temporary result sets that can be referenced within the main query.
+
+-   It acts like a temporary table for the duration of the query.
+
+```sql
+WITH cte_name AS (
+    -- Subquery goes here
+    SELECT ...
+)
+-- Main query using the CTE
+SELECT ...
+FROM cte_name;
+```
+
+-   If the same subquery needs to be used multiple times in a query, define it as a CTE.
+
+-   CTEs are not persistent. They exist only during the execution of the query.
+
+-   CTEs can reference each other or themselves (in the case of recursive CTEs).
+
+-   If you define multiple CTEs, separate them with commas.
+
