@@ -19,12 +19,11 @@ $$
 		USING
 			(town_id)
 		WHERE 
-            t.name = town_name;
+			t.name = town_name;
 		RETURN 
-            count_employees;
+			count_employees;
 	END
 $$
 LANGUAGE plpgsql;
 
 -- SELECT fn_count_employees_by_town('Sofia');
-
