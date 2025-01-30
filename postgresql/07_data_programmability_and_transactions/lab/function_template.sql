@@ -1,7 +1,7 @@
 CREATE OR REPLACE FUNCTION fn_function_name(param_name param_type, param_2 type_2)
 RETURNS value_type AS
 $$
-	DECLARE
+	DECLARE		-- if needed
 		variable_name variable_type;
 		variable_2 type_2;
 	BEGIN

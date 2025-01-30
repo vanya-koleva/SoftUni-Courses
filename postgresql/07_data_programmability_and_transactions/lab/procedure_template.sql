@@ -1,4 +1,4 @@
-CREATE PROCEDURE sp_procedure_name(param_1)
+CREATE PROCEDURE sp_procedure_name(param_1 param_type)
 AS 
 $$
 DECLARE auxiliary_value_if_needed value_type
