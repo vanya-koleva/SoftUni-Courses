@@ -88,7 +88,7 @@ SELECT fn_count_employees_by_town('Sofia') AS count;
 -   Unlike functions, procedures in PostgreSQL are primarily used to **manipulate data**. Another difference is that they do not use RETURN to return values, but they can pass data using OUT parameters if needed.
 
 -   It is best practice for procedures to **communicate their status** (OUT parameters, RAISE NOTICE) to confirm whether they completed successfully.
--   The message from RAISE NOTICE goes in Output, not Result tab.
+-   The message from RAISE NOTICE goes in Output, not Result tab. In Messages tab in PGAdmin.
 
 -   `IN` - Input parameters. These are passed to the procedure when it is called.
 -   `OUT` - Output parameters, which are returned to the caller after execution.
@@ -174,6 +174,7 @@ END;
 ## Triggers
 
 -   Functions executed **Before/After** a **DELETE/UPDATE/INSERT** query.
+
 -   Similar to event listeners in JS.
 
 ```sql
@@ -189,4 +190,38 @@ CREATE TRIGGER trigger_update_last_modified
 BEFORE UPDATE ON products
 FOR EACH ROW EXECUTE FUNCTION update_last_modified();
 ```
+
+-   `FOR EACH STATEMENT` - Trigger function will execute once per **statement**.
+
+    -   Cannot access individual row data.
+
+    -   Does **not** have access to OLD/NEW.
+
+    -   If you update **10 rows** in a table, a FOR EACH STATEMENT trigger will fire only **once**, regardless of the number of rows affected.
+
+    -   Use cagses e.g: only need to track the fact that a modification happened, without concern for individual rows.
+
+-   `FOR EACH ROW` - Once for **each row** affected.
+
+    -   If you update **10 rows** in a table, a FOR EACH ROW trigger will fire **10 times**, once for each row.
+
+    -   Use cases e.g: maintaining history tables, validating changes per row.
+
+-   `OLD` - the old state of the row before the triggering event.
+
+    -   It is available for `UPDATE` and `DELETE` operations.
+
+    -   INSERT - OLD is not available - NULL (there is no old row).
+
+-   `NEW` - the new state of the row after the triggering event.
+
+    -   It is available for `INSERT` and `UPDATE` operations.
+
+    -   DELETE - NEW is not available - NULL (there is no new row).
+
+-   `AFTER` triggers are read-only (useful for logging or auditing).
+
+    -   You cannot modify the row that caused the trigger to fire.
+
+    -   The RETURN statement is ignored. But you have to write it.
 
