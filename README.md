@@ -1,6 +1,7 @@
 ## List of Courses
 
 -   [Python ORM](https://github.com/vanya-koleva/softuni_courses/tree/main/python_orm)
+
 -   [PostgreSQL](https://github.com/vanya-koleva/softuni_courses/tree/main/postgresql)
 
 -   [JS Front-End](https://github.com/vanya-koleva/softuni_courses/tree/main/js_front_end)
