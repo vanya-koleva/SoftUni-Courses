@@ -169,3 +169,21 @@ first_name = models.CharField(
 
     -   Used to hide some fields such as encrypted code, verifications, etc.
 
+## Models Migration Basics
+
+-   Use migrations to propagate changes you make in your models to your database schema.
+
+-   Like a version control system for the schema.
+
+-   Pack the changes into migration files:
+
+```bash
+python manage.py makemigrations
+```
+
+-   To apply the changes:
+
+```bash
+python manage.py migrate
+```
+
