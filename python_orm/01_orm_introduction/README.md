@@ -155,6 +155,8 @@ python manage.py startapp
 -   The app can be moved inside the root directory of your Django project (a good way of project management).
 
 -   To include an app in a project, add a reference to the app in the INSTALLED_APPS setting.
+  
+-   When you add new apps to INSTALLED_APPS, be sure to run manage.py migrate.
 
 -   To configure our project to work with PostgreSQL, we need to set it up in the settings.py file.
 
@@ -170,3 +172,30 @@ python manage.py dbshell
 -   `\dt` command shows all tables in the current database.
 -   `\d <table_name>` command shows a specific table.
 
+## Workflow for the Course
+
+Naviggate to the directory with `cd`
+```bash
+python3 -m venv .venv
+
+source .venv/bin/activate   # venv\Scripts\activate for Windows
+
+pip install -r requirements.txt     
+
+pip install psycopg2    # if needed
+```
+Add database source.  
+Change settings.py:
+```python
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "database-name",
+        "USER": "postgres-user",
+        "PASSWORD": "password",
+        "HOST": "localhost",
+        "PORT": "5432",
+    }
+}
+```
+*Using `python3 -m venv .venv` will create a hidden virtual environment.
