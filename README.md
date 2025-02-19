@@ -22,3 +22,5 @@ Courses that I am not taking but I solve tasks from them sometimes because SoftU
 
 -   [Programming Basics with JavaScript](https://github.com/vanya-koleva/softuni_courses/tree/main/js_basics)
 
+-   [Programming Basics with C#](https://github.com/vanya-koleva/softuni_courses/tree/main/csharp_basics)
+
